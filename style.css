@@ -305,3 +305,72 @@ footer a:hover, footer a:focus {
         padding: 0 15px;
     }
 }
+
+/* --- Stili per la Sezione Contatti --- */
+
+#contact .container {
+    text-align: center; /* Centra i titoli H2 e P iniziali */
+}
+
+.contact-methods {
+    display: flex;          /* 1. Attiva Flexbox per questo contenitore */
+    flex-wrap: wrap;        /* 2. Permette agli elementi di andare a capo su schermi piccoli */
+    justify-content: space-around; /* 3. Distribuisce lo spazio attorno agli elementi */
+                                   /* Alternative: space-between (spazio solo tra elem.), center (li raggruppa al centro) */
+    gap: 20px;              /* 4. Aggiunge spazio (gutter) tra gli elementi (sia orizzontale che verticale quando vanno a capo) */
+    margin-top: 40px;       /* Aggiunge un po' di spazio sopra i box di contatto */
+    text-align: left;       /* Resetta l'allineamento testo per i singoli box (se ereditato da .container) */
+}
+
+.contact-method {
+    flex: 1;                /* 5. Dice agli elementi di crescere e occupare lo spazio disponibile in modo uguale */
+                            /*    Su schermi larghi, potrebbero non riempire tutto se justify-content è space-around/between */
+    min-width: 250px;       /* 6. Imposta una larghezza minima prima di andare a capo (aggiusta qst valore!) */
+    padding: 20px;          /* Aggiunge spazio interno ai box */
+    border: 1px solid #eee; /* Esempio: aggiunge un bordo leggero per vederli meglio */
+    border-radius: 8px;     /* Esempio: angoli arrotondati */
+    margin-bottom: 20px;    /* Aggiunge spazio sotto quando vanno a capo */
+    text-align: center;     /* 7. Centra il contenuto (icona, h3, p, link) all'interno di ogni box */
+    display: flex;          /* (Opzionale avanzato) Rende il box stesso un flex container... */
+    flex-direction: column; /* ...per allineare verticalmente il suo contenuto */
+    align-items: center;    /* ...centrando gli elementi orizzontalmente all'interno */
+}
+
+.contact-method i {
+    font-size: 2.5em;       /* Rende l'icona più grande */
+    margin-bottom: 15px;    /* Spazio tra icona e titolo */
+    color: #007bff;         /* Esempio: Colore icona (blu) */
+}
+
+.contact-method h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.contact-method p {
+    margin-bottom: 15px;
+    flex-grow: 1; /* (Opzionale avanzato) Fa sì che il paragrafo occupi spazio spingendo il bottone in basso */
+}
+
+.contact-method .cta-button {
+    display: inline-block; /* Assicura che padding/margin funzionino bene */
+    padding: 10px 20px;
+    background-color: #007bff; /* Esempio: Colore bottone */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Effetto hover */
+}
+
+.contact-method .cta-button:hover {
+    background-color: #0056b3; /* Colore bottone al passaggio del mouse */
+}
+
+
+/* Rimuovi o commenta se non ti serve più */
+/*
+.contact-details {
+    margin-top: 40px;
+    text-align: center;
+}
+*/
