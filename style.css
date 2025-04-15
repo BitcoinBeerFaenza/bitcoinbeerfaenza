@@ -293,11 +293,19 @@ footer a:hover, footer a:focus {
     h3 { font-size: 1.3rem; }
 
     header nav ul {
-        flex-direction: column; /* Menu in colonna su mobile */
-        align-items: center;
-        gap: 10px;
+        flex-direction: row; /* Menu in riga su mobile */
+        justify-content: center; /* Centra le voci orizzontalmente */
+        align-items: center; /* Allinea le voci verticalmente al centro (opzionale) */
+        gap: 10px; /* Mantiene o adatta lo spazio tra le voci */
+        overflow-x: auto; /* Permette lo scorrimento orizzontale se gli elementi sono troppi */
+        white-space: nowrap; /* Impedisce alle voci di andare a capo */
+        padding: 10px 15px; /* Aggiungi un po' di padding per lo scorrimento */
     }
-
+  header nav ul li {
+        flex-shrink: 0; /* Impedisce agli elementi di ridursi troppo */
+    }
+    /* ... altre regole ... */
+}
     section {
         padding: 40px 0;
     }
@@ -376,12 +384,23 @@ footer a:hover, footer a:focus {
 */
 
 @media (max-width: 600px) { /* Puoi adattare questo valore in base alle tue esigenze */
-    header nav ul li a {
-        font-size: 0.5rem; /* Riduci la dimensione del testo */
-        padding: 0.4rem 0.8rem; /* Riduci il padding interno */
+    header nav ul {
+        flex-direction: row; /* Assicurati che sia orizzontale anche qui */
+        justify-content: flex-start; /* Inizia gli elementi a sinistra (potrebbe essere più intuitivo per lo scorrimento) */
+        align-items: center;
+        gap: 8px; /* Adatta lo spazio se necessario */
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 8px 10px;
     }
 
-    header nav ul {
-        gap: 8px; /* Riduci lo spazio tra le voci di menu se necessario */
+    header nav ul li {
+        flex-shrink: 0;
     }
+
+    header nav ul li a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+    /* ... altre regole ... */
 }
