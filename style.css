@@ -1,0 +1,307 @@
+/* ========= RESET BASE E GLOBALI ========= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Abilita lo smooth scroll nativo */
+    font-size: 16px; /* Base per unità rem */
+}
+
+body {
+    font-family: 'Nunito', sans-serif; /* Font per il corpo del testo */
+    line-height: 1.6;
+    color: #cccccc; /* Grigio chiaro su sfondo scuro */
+    background-color: #1a1a1a; /* Sfondo scuro */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Code Pro', monospace; /* Font per i titoli */
+    color: #FF9900; /* Verde "hacker" per i titoli */
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; color: #33cc33; } /* Verde leggermente più scuro per H3 */
+h4 { font-size: 1.2rem; }
+
+a {
+    color: #00ccff; /* Azzurro ciano per i link */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+    color: #ffffff; /* Bianco al passaggio del mouse */
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Rimuove spazio extra sotto l'immagine */
+}
+
+ul {
+    list-style: none;
+}
+
+/* ========= UTILITY ========= */
+.container {
+    max-width: 1100px; /* Larghezza massima del contenuto */
+    margin: 0 auto; /* Centra il contenitore */
+    padding: 0 20px; /* Spazio laterale */
+}
+
+/* ========= HEADER / NAVIGAZIONE ========= */
+header {
+    background-color: #111111; /* Sfondo leggermente diverso per header */
+    padding: 1rem 0;
+    border-bottom: 1px solid #333;
+    position: sticky; /* Barra di navigazione fissa (opzionale) */
+    top: 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center; /* Centra le voci */
+    gap: 20px; /* Spazio tra le voci */
+}
+
+header nav ul li a {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+header nav ul li a:hover, header nav ul li a:focus {
+    background-color: #00ff00;
+    color: #111111;
+    text-decoration: none;
+}
+
+/* ========= SEZIONE HERO ========= */
+#hero {
+    min-height: 70vh; /* Altezza minima, copre buona parte dello schermo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 0;
+    /* Immagine/Colore di sfondo (opzionale) */
+    /* background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('hero-background.jpg') no-repeat center center/cover; */
+    background-color: #222; /* Sfondo di fallback */
+}
+
+#hero h1 {
+    color: #FF9900; /* Verde brillante per il titolo principale */
+    margin-bottom: 1rem;
+    font-size: 3rem; /* Più grande */
+}
+
+#hero p {
+    font-size: 1.2rem;
+    color: #bbbbbb;
+    margin-bottom: 2rem;
+    max-width: 600px; /* Limita larghezza sottotitolo */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #FF9900; /* Verde */
+    color: #111111; /* Testo scuro */
+    padding: 0.8rem 1.8rem;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cta-button:hover, .cta-button:focus {
+    background-color: transparent; /* Sfondo trasparente */
+    color: #FF9900; /* Testo verde */
+    text-decoration: none;
+    transform: translateY(-2px); /* Leggero effetto al passaggio */
+}
+
+
+/* ========= SEZIONI GENERICHE ========= */
+section {
+    padding: 60px 0; /* Spazio sopra/sotto ogni sezione */
+    border-bottom: 1px solid #333; /* Linea separatrice */
+}
+section:last-of-type {
+    border-bottom: none; /* Rimuove bordo sotto l'ultima sezione */
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px; /* Più spazio sotto i titoli di sezione */
+}
+
+/* ========= SEZIONE CHI SIAMO ========= */
+#about .container {
+    max-width: 800px; /* Contenitore più stretto per il testo */
+    text-align: center;
+}
+
+/* ========= SEZIONE EVENTI/SERVIZI ========= */
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Griglia responsiva */
+    gap: 30px; /* Spazio tra gli elementi della griglia */
+    text-align: center;
+}
+
+.service-item {
+    background-color: #2a2a2a; /* Sfondo per le card */
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.service-item i { /* Stile per le icone Font Awesome */
+    font-size: 2.5rem;
+    color: #00ff00; /* Icone verdi */
+    margin-bottom: 15px;
+}
+
+.service-item h3 {
+    margin-bottom: 10px;
+}
+
+/* ========= SEZIONE RISORSE/PORTFOLIO ========= */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden; /* Nasconde parti dell'immagine che escono */
+    border: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-image {
+    /* Gli stili max-width/height auto sono già in img globale */
+    width: 100%; /* Assicura che l'immagine riempia */
+    aspect-ratio: 16 / 9; /* Rapporto d'aspetto per le immagini */
+    object-fit: cover; /* Copre l'area senza distorcere */
+}
+
+.portfolio-item h4 {
+    margin: 15px 20px 5px 20px; /* Spazio interno per titolo */
+     color: #00ccff; /* Azzurro per i titoli delle risorse */
+}
+
+.portfolio-item p {
+    margin: 0 20px 15px 20px; /* Spazio interno per descrizione */
+    flex-grow: 1; /* Fa espandere il paragrafo se c'è spazio */
+    font-size: 0.9rem;
+}
+
+.portfolio-item .resource-link {
+    display: block; /* Occupa tutta la larghezza */
+    background-color: #00ccff;
+    color: #111;
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: auto; /* Spinge il link in fondo alla card */
+    font-family: 'Source Code Pro', monospace;
+}
+.portfolio-item .resource-link:hover,
+.portfolio-item .resource-link:focus {
+     background-color: #00ff00;
+     text-decoration: none;
+}
+
+
+/* ========= SEZIONE CONTATTI ========= */
+#contact .container {
+    text-align: center;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-method {
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.contact-method i {
+    font-size: 2.5rem;
+    color: #00ccff; /* Azzurro per icone contatti */
+    margin-bottom: 15px;
+}
+.contact-method .cta-button {
+    margin-top: 15px;
+}
+
+
+/* ========= FOOTER ========= */
+footer {
+    background-color: #111111;
+    color: #888;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px; /* Spazio prima del footer */
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+footer a {
+    color: #aaa;
+    margin: 0 10px;
+    font-size: 1.2rem; /* Icone social più grandi */
+}
+footer a:hover, footer a:focus {
+    color: #00ff00; /* Verde al passaggio */
+}
+
+
+/* ========= MEDIA QUERIES (Esempio per mobile) ========= */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    #hero h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.3rem; }
+
+    header nav ul {
+        flex-direction: column; /* Menu in colonna su mobile */
+        align-items: center;
+        gap: 10px;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+    .container {
+        padding: 0 15px;
+    }
+}
